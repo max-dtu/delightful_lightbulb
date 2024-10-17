@@ -23,6 +23,11 @@ def read_objects(project):
         object_dict[label] = objects.loc[objects[" Label"] == label, :]
     return object_dict
 
+def read_csv(project):
+    objects = pd.read_csv("data/TrainingSet/{}/{}.csv".format(project, project),
+                          sep=",", header=0)
+    return objects
+
 
 def read_object_bb(object_dict):
     bounding_boxes = {}
